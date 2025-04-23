@@ -38,8 +38,30 @@ async function getCat1() {
   }
 }
 
+async function getCat2() {
+  try {
+    return await directus.request(
+      readItems("works", {
+        fields: ["*", "*.*"],
+        sort: ["-year"],
+        filter: {
+          _and: [
+            {
+              status: { _eq: "published" },
+              category: { _eq: "2" },
+            },
+          ],
+        },
+      })
+    );
+  } catch (error) {
+    notFound();
+  }
+}
+
 export default async function RootLayout({ children }) {
   const cat1 = await getCat1();
+  const cat2 = await getCat2();
   // console.log(cat1[0].category.category_name);
 
   const NAVIGATION = [
@@ -60,6 +82,14 @@ export default async function RootLayout({ children }) {
       title: cat1[0].category.category_name.toUpperCase(),
     },
     ...cat1.map((work) => ({
+      segment: `works/${work.slug}`,
+      title: work.title,
+    })),
+    {
+      kind: "header",
+      title: cat2[0].category.category_name.toUpperCase(),
+    },
+    ...cat2.map((work) => ({
       segment: `works/${work.slug}`,
       title: work.title,
     })),
