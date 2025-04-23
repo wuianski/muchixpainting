@@ -2,8 +2,8 @@
 const nextConfig = {
   /* config options here */
   env: {
-    DIRECTUS_URL_DEV: process.env.DIRECTUS_URL_DO,
-    DIRECTUS_IMAGE_DOMAIN_DEV: process.env.DIRECTUS_IMAGE_DOMAIN_DO,
+    DIRECTUS_URL_DO: process.env.DIRECTUS_URL_DO,
+    DIRECTUS_IMAGE_DOMAIN_DO: process.env.DIRECTUS_IMAGE_DOMAIN_DO,
   },
   images: {
     remotePatterns: [`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}`],

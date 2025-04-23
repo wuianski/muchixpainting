@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-- npm = 10.1.0
-- node = 20.8.0
+- npm = 10.9.2
+- node = 22.15.0
 
 ## Install
 
