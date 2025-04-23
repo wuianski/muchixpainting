@@ -46,7 +46,7 @@ export default async function AboutPage() {
           <a
             href={
               item.file
-                ? `${process.env.DIRECTUS_IMAGE_DOMAIN_DEV}${item.file.filename_disk}`
+                ? `${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${item.file.filename_disk}`
                 : item.link
             }
             target="_blank"

@@ -18,7 +18,7 @@ export default function PhotoGallery({ photos, params }) {
   const imageSizes = [16, 32, 48, 64, 96, 128, 256, 384];
   const deviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
   const myphotos = photos.map((photo) => ({
-    src: `${process.env.DIRECTUS_IMAGE_DOMAIN_DEV}${photo.item.image.filename_disk}`,
+    src: `${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${photo.item.image.filename_disk}`,
     width: photo.item.image.width,
     height: photo.item.image.height,
     description: (
@@ -29,7 +29,7 @@ export default function PhotoGallery({ photos, params }) {
     srcSet: [...imageSizes, ...deviceSizes]
       .filter((size) => size <= photo.item.image.width)
       .map((size) => ({
-        src: `${process.env.DIRECTUS_IMAGE_DOMAIN_DEV}${photo.item.image.filename_disk}`,
+        src: `${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${photo.item.image.filename_disk}`,
         width: size,
         height: Math.round(
           (photo.item.image.height / photo.item.image.width) * size

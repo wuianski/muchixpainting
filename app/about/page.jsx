@@ -39,7 +39,7 @@ export default async function AboutPage() {
       <Box>
         <a
           target="_blank"
-          href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DEV}/${about.cv.filename_disk}`}
+          href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}/${about.cv.filename_disk}`}
         >
           簡歷 | CV
         </a>
