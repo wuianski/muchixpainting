@@ -7,7 +7,7 @@ import { cutiveMono } from "@/lib/font";
 /* MUI */
 import { Box, Stack } from "@mui/material";
 import Item from "@/components/StackItem";
-/* grid image */
+/* Grid Image */
 import PhotoGallery from "@/components/PhotoGallery";
 
 /* fetch data from directus */

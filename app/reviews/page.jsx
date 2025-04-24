@@ -30,7 +30,7 @@ async function getReviews() {
   }
 }
 
-export default async function AboutPage() {
+export default async function ReivewPage() {
   const reviews = await getReviews();
   //   console.log(reviews);
   return (
