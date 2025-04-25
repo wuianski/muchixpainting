@@ -59,6 +59,12 @@ async function getCat2() {
   }
 }
 
+/* SEO */
+export const metadata = {
+  title: "Muchi Hsieh | 謝牧岐",
+  description: "Muchi Hsieh's website",
+};
+
 export default async function RootLayout({ children }) {
   const cat1 = await getCat1();
   const cat2 = await getCat2();

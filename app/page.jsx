@@ -7,6 +7,8 @@ import { readItems } from "@directus/sdk";
 /* import components */
 import Box from "@mui/material/Box";
 import Image from "next/image";
+/* Grid Image */
+import PhotoGalleryNews from "@/components/PhotoGalleryNews";
 
 /* fetch data from directus */
 async function getNews() {
@@ -36,7 +38,7 @@ export default async function NewsPage() {
   // console.log(news);
   return (
     <Box>
-      {news.map((news) => (
+      {/* {news.map((news) => (
         <Box key={news.id} sx={{ paddingBottom: "8px !important" }}>
           <a href={news.link} target="_blank">
             <Image
@@ -55,7 +57,14 @@ export default async function NewsPage() {
             />
           </a>
         </Box>
-      ))}
+      ))} */}
+      <Box
+        sx={{
+          m: { xs: "0.9rem !important", md: "1.8rem !important" },
+        }}
+      >
+        <PhotoGalleryNews photos={news} />
+      </Box>
     </Box>
   );
 }

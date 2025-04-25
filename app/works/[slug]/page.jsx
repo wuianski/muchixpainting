@@ -39,9 +39,35 @@ async function getWork(slug) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  // fetch data
+  const work = await getWork((await params).slug);
+
+  return {
+    title: `painting - ` + work.title,
+    description: `painting - ` + work.title,
+    canonical: `https://muchixpainting.cc/works/${work.slug}`,
+    openGraph: {
+      type: "website",
+      url: "https://muchixpainting.cc",
+      title: work.title,
+      description: work.title,
+      images: [
+        {
+          url: `${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${work.images[0].item.image.filename_disk}`,
+          // width: 800,
+          // height: 600,
+          alt: "Cover of the artwork",
+        },
+      ],
+      site_name: "muchixpainting.cc",
+    },
+  };
+}
+
 export default async function Page({ params }) {
   const work = await getWork((await params).slug);
-  //   console.log(work.images);
+  // console.log(work.images[0].item.image.filename_disk);
   return (
     <Box
       className={cutiveMono.className}
@@ -64,12 +90,12 @@ export default async function Page({ params }) {
             }}
           >
             <Box>
-              <Box
+              {/* <Box
                 component="span"
                 sx={{ fontStyle: "italic", fontWeight: "bold" }}
               >
                 {work.title}
-              </Box>
+              </Box> */}
             </Box>
             <Box dangerouslySetInnerHTML={{ __html: work.info }} />
             <Box
