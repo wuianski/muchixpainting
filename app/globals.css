@@ -30,17 +30,19 @@ nav::-webkit-scrollbar {
 
 /* Navigation */
 .MuiButtonBase-root {
-  height: 2.7rem;
-  max-width: fit-content;
+  /* height: 2.7rem; */
+  /* max-width: fit-content; */
   /* padding: 0.9rem; */
   /* margin-top: 0.45rem; */
   flex-direction: row-reverse;
-  gap: 1rem;
+  /* gap: 1rem; */
+  /* padding-left: -0.45rem; */
 }
 .MuiListItemText-root {
-  height: 8px;
-  line-height: 8px;
-  margin-bottom: unset;
+  /* height: 8px; */
+  /* line-height: 8px; */
+  /* margin-bottom: unset; */
+  /* padding: 0.9rem; */
 }
 
 /* Lightbox */

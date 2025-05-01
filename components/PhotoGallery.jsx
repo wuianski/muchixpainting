@@ -47,7 +47,7 @@ export default function PhotoGallery({ photos, params }) {
       <PhotoAlbum
         photos={myphotos}
         layout="rows"
-        targetRowHeight={250}
+        targetRowHeight={450}
         renderPhoto={NextJsImage}
         defaultContainerWidth={1200}
         sizes={{
